@@ -1365,10 +1365,18 @@ contract Comptroller is ComptrollerV4Storage, ComptrollerInterface, ComptrollerE
     }
 
     /**
-     * @notice Return the address of the LHB token
-     * @return The address of LHB
+     * @notice Set the address of the TROP token
+     */
+    function setCompAddress(address compAddress_) public {
+        require(msg.sender == admin, "only admin can set TROP");
+        compAddress = compAddress_;
+    }
+
+    /**
+     * @notice Return the address of the TROP token
+     * @return The address of TROP
      */
     function getCompAddress() public view returns (address) {
-        return 0x8F67854497218043E1f72908FFE38D0Ed7F24721;
+        return compAddress;
     }
 }

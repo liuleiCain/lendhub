@@ -3,16 +3,16 @@ pragma experimental ABIEncoderV2;
 
 contract LendHub {
     /// @notice EIP-20 token name for this token
-    string public constant name = "LendHub";
+    string public constant name = "Mara";
 
     /// @notice EIP-20 token symbol for this token
-    string public constant symbol = "LHB";
+    string public constant symbol = "MARA";
 
     /// @notice EIP-20 token decimals for this token
     uint8 public constant decimals = 18;
 
     /// @notice Total number of tokens in circulation
-    uint public constant totalSupply = 1000000000e18; // 1 billion LHB
+    uint public constant totalSupply = 1000000000e18; // 1 billion MARA
 
     /// @notice Allowance amounts on behalf of others
     mapping (address => mapping (address => uint96)) internal allowances;
