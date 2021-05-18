@@ -1365,16 +1365,16 @@ contract Comptroller is ComptrollerV4Storage, ComptrollerInterface, ComptrollerE
     }
 
     /**
-     * @notice Set the address of the TROP token
+     * @notice Set the address of the MARA token
      */
     function setCompAddress(address compAddress_) public {
-        require(msg.sender == admin, "only admin can set TROP");
+        require(msg.sender == admin, "only admin can set MARA");
         compAddress = compAddress_;
     }
 
     /**
-     * @notice Return the address of the TROP token
-     * @return The address of TROP
+     * @notice Return the address of the MARA token
+     * @return The address of MARA
      */
     function getCompAddress() public view returns (address) {
         return compAddress;
