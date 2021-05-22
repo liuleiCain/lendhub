@@ -50,9 +50,9 @@ contract LendHubLensLHB is ExponentialNoError {
         // 24位小数
         uint exchangeRateCurrent = cToken.exchangeRateStored();
         uint totalPrice = cToken.totalSupply() * exchangeRateCurrent * priceOracle.getUnderlyingPrice(cToken);
-        uint supplyAPY = 1000000000000000000 * 1000000 * 10512000 * speed * lhbPrice / totalPrice;
+        uint supplyAPY = 1000000000000000000 * 1000000 * 5256000 * speed * lhbPrice / totalPrice;
         uint totalBorrowPrice = cToken.totalBorrows() * priceOracle.getUnderlyingPrice(cToken);
-        uint borrowLHBAPY = 1000000 * 10512000 * speed * lhbPrice / totalBorrowPrice;
+        uint borrowLHBAPY = 1000000 * 5256000 * speed * lhbPrice / totalBorrowPrice;
 
         return CTokenLHBData({
         cToken : address(cToken),
