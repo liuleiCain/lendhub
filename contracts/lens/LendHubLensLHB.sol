@@ -11,17 +11,27 @@ import "../SimplePriceOracle.sol";
 interface ComptrollerLensInterface {
 
     function compSpeeds(address) external view returns (uint);
-    function compSupplyState(address) external view returns(uint224, uint32);
-    function compBorrowState(address) external view returns(uint224, uint32);
+
+    function compSupplyState(address) external view returns (uint224, uint32);
+
+    function compBorrowState(address) external view returns (uint224, uint32);
+
     function compSupplierIndex(address, address) external view returns (uint);
+
     function compBorrowerIndex(address, address) external view returns (uint);
 
     function markets(address) external view returns (bool, uint);
+
     function oracle() external view returns (PriceOracle);
+
     function getAccountLiquidity(address) external view returns (uint, uint, uint);
+
     function getAssetsIn(address) external view returns (CToken[] memory);
+
     function claimComp(address) external;
+
     function compAccrued(address) external view returns (uint);
+
     function getCompAddress() external view returns (address);
 }
 
@@ -50,9 +60,9 @@ contract LendHubLensLHB is ExponentialNoError {
         // 24位小数
         uint exchangeRateCurrent = cToken.exchangeRateStored();
         uint totalPrice = cToken.totalSupply() * exchangeRateCurrent * priceOracle.getUnderlyingPrice(cToken);
-        uint supplyAPY = 1000000000000000000 * 1000000 * 5256000 * speed * lhbPrice / totalPrice;
+        uint supplyAPY = 1000000000000000000 * 1000000 * 10512000 * speed * lhbPrice / totalPrice;
         uint totalBorrowPrice = cToken.totalBorrows() * priceOracle.getUnderlyingPrice(cToken);
-        uint borrowLHBAPY = 1000000 * 5256000 * speed * lhbPrice / totalBorrowPrice;
+        uint borrowLHBAPY = 1000000 * 10512000 * speed * lhbPrice / totalBorrowPrice;
 
         return CTokenLHBData({
         cToken : address(cToken),
