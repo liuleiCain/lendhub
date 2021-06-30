@@ -1,0 +1,25 @@
+{
+  "name": "pledge-protocol",
+  "version": "0.1.1",
+  "description": "The Compound Money Market on BSC",
+  "main": "index.js",
+  "scripts": {
+    "compile": "./script/compile",
+    "console": "if node -v | grep -E \"v(12|13)\" > /dev/null; then flags=\"-n --experimental-repl-await\"; fi; npx $flags saddle console",
+    "coverage": "./script/coverage",
+    "deploy": "./scenario/script/repl -s ./script/scen/deploy.scen",
+    "lint": "./script/lint",
+    "repl": "./scenario/script/repl",
+    "test": "./script/test",
+    "test:prepare": "NO_RUN=true ./script/test"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "eth-saddle": "^0.1.21",
+    "ether": "^0.0.9",
+    "ethers": "^5.0.32",
+    "solc": "^0.5.17",
+    "truffle-privatekey-provider": "^1.5.0"
+  }
+}
