@@ -3,7 +3,7 @@ pragma experimental ABIEncoderV2;
 
 contract LendHub {
     /// @notice EIP-20 token name for this token
-    string public constant name = "Mara";
+    string public constant name = "MARA";
 
     /// @notice EIP-20 token symbol for this token
     string public constant symbol = "MARA";
